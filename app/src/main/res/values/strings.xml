@@ -9,4 +9,6 @@
     <string name="creator_name">João Pedro Mantovani</string>
     <string name="creator_email">jpm.mantovani45@gmail.com</string>
     <string name="creator_description">Desenvolvedor web blabalbalba</string>
+    <string name="save">Salvar</string>
+    <string name="add_restaurant">Adicionar</string>
 </resources>

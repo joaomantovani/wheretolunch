@@ -73,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent_home = new Intent(this, MainActivity.class);
                 startActivity(intent_home);
                 return true;
+            case R.id.navigation_add:
+                Intent intent_add =
+                        new Intent(this, CreateNewActivity.class);
+                startActivity(intent_add);
+                return true;
             case R.id.navigation_configuration:
                 Intent intent_configuration =
                         new Intent(this, ConfigurationActivity.class);
@@ -104,5 +109,14 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+    }
+
+    private static Restaurant addUser(final AppDatabase db, Restaurant restaurant) {
+        db.restaurantDAO().insertAll(restaurant);
+        return restaurant;
+    }
+
+    private static void populateWithTestData(AppDatabase db) {
+        addUser(db, new Restaurant("Aulus db"));
     }
 }
