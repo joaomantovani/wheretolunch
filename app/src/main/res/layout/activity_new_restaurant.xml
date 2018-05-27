@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/activity_new_restaurant_name"
+        android:inputType="textCapSentences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_restaurant_name"
+        android:focusableInTouchMode="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
+        />
+
+    <EditText
+        android:id="@+id/activity_new_restaurant_description"
+        android:inputType="textCapSentences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_restaurant_description"
+        android:scrollHorizontally="true"
+        app:layout_constraintTop_toBottomOf="@id/activity_new_restaurant_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        />
+
+    <TextView
+        android:id="@+id/activity_new_header_filters"
+        android:text="Opções de cartão"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Widget.PopupMenu.Header"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/activity_new_restaurant_description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        />
+
+    <CheckBox
+        android:id="@+id/activity_new_restaurant_accepted_verocard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aceita Verocard?"
+        app:layout_constraintTop_toBottomOf="@id/activity_new_header_filters"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

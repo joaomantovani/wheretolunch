@@ -11,4 +11,6 @@
     <string name="creator_description">Desenvolvedor web blabalbalba</string>
     <string name="save">Salvar</string>
     <string name="add_restaurant">Adicionar</string>
+    <string name="add_restaurant_name">Nome do restaurante</string>
+    <string name="add_restaurant_description">Descrição</string>
 </resources>
