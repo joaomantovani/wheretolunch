@@ -12,6 +12,7 @@ It's possible to add your favorite restaurants and then, sort one of them.
  - Add filters sort selected restaurants (credit card, etc)
  - Refactor the code to the best practices
  - Publish in Google Play Store
+ - Learn and add tests
 
 ## Getting Started
 
