@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Onde almoçar?</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="restaurant_draw">Sorteio</string>
+    <string name="configurations">Configurações</string>
+    <string name="about">Sobre</string>
+    <string name="creator_name">João Pedro Mantovani</string>
+    <string name="creator_email">jpm.mantovani45@gmail.com</string>
+    <string name="creator_description">Desenvolvedor web blabalbalba</string>
+</resources>

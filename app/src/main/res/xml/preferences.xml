@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:title="Restaurantes">
+
+        <PreferenceScreen
+            android:key="button_voicemail_category_key"
+            android:title="Restaurantes cadastrados"
+            android:persistent="false">
+            <ListPreference
+                android:key="button_voicemail_provider_key"
+                android:title="teste_provider"/>
+            <!-- opens another nested subscreen -->
+            <PreferenceScreen
+                android:key="button_voicemail_setting_key"
+                android:title="teste_settings"
+                android:persistent="false">
+            </PreferenceScreen>
+            <RingtonePreference
+                android:key="button_voicemail_ringtone_key"
+                android:title="teste_ringtone_title"
+                android:ringtoneType="notification"/>
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Filtros">
+
+        <CheckBoxPreference
+            android:key="AcceptAlimentationCard"
+            android:title="Aceita vale?"
+            android:summary="No sorteio irão entrar restaurantes que aceitem o vale alimentação"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
