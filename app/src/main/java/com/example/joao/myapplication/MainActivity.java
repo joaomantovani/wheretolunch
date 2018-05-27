@@ -40,18 +40,8 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        restaurantList = new ArrayList<>();
-        restaurantList.add(new Restaurant("Aulus"));
-        restaurantList.add(new Restaurant("Bardana"));
-        restaurantList.add(new Restaurant("Casa da Muqueca"));
-        restaurantList.add(new Restaurant("Burguer King"));
-        restaurantList.add(new Restaurant("Armazém Nobre"));
-        restaurantList.add(new Restaurant("Alzirão"));
-        restaurantList.add(new Restaurant("Bandejão"));
-        restaurantList.add(new Restaurant("Pepe Loco"));
-        restaurantList.add(new Restaurant("Quinta do Barão"));
-        restaurantList.add(new Restaurant("Barão Lanches"));
-        restaurantList.add(new Restaurant("Dalbein"));
+        AppDatabase db = AppDatabase.getAppDatabase(this);
+        restaurantList = db.restaurantDAO().getAll();
 
         //Specify an adapter
         mAdapter = new RestaurantAdapter(restaurantList);
@@ -93,20 +83,36 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
 
+        final AppDatabase db = AppDatabase.getAppDatabase(this);
+
         fabShuffle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Restaurant restaurantSorted = restaurantList.get(new Random().nextInt(restaurantList.size()));
+                List<Restaurant> restaurantList = db.restaurantDAO().getAll();
+                Restaurant sortedRestaurant = restaurantList.get(new Random().nextInt(restaurantList.size()));
 
                 Toast.makeText(
                         MainActivity.this,
-                        "Sorteado: " + restaurantSorted.getName(),
+                        "Sorteado: " + sortedRestaurant.getName(),
                         Toast.LENGTH_SHORT)
                         .show();
+
+                Intent intent_show_detail = new Intent(
+                        getApplicationContext(),
+                        ShowRestaurantActivity.class);
+
+                intent_show_detail.putExtra("name", sortedRestaurant.getName());
+                intent_show_detail.putExtra("description", sortedRestaurant.getDescription());
+                intent_show_detail.putExtra("photoId", sortedRestaurant.getPhotoId());
+                intent_show_detail.putExtra("address", sortedRestaurant.getAddress());
+
+                startActivity(intent_show_detail);
             }
         });
     }

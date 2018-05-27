@@ -32,6 +32,10 @@
         <activity android:name=".CreateNewActivity"
             android:parentActivityName=".MainActivity"
             tools:targetApi="jelly_bean" />
+
+        <activity android:name=".ShowRestaurantActivity"
+            android:parentActivityName=".MainActivity"
+            tools:targetApi="jelly_bean" />
     </application>
 
 </manifest>
